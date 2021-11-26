@@ -1,0 +1,33 @@
+package pageUIs;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import pageObjects.HomePageObject;
+
+public class LoginPageUI {
+	WebDriver driver;
+	
+	//By username = By.id("iusername");
+	//By password = By.id("ipassword");
+	//By loginbtn = By.xpath("//button[@type='submit']");
+	
+	@FindBy(id="iusername")	
+	public WebElement userName;
+	
+	@FindBy(id="ipassword")//
+	public WebElement passWord;
+
+	@FindBy(xpath="//button[@type='submit']")
+	public WebElement loginbtn;
+	
+	
+	//contructor phải khởi tạo để qua object khai báo page,object xài được
+	public LoginPageUI(){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);		
+	}
+}
